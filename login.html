@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+        border: 2px solid black;
+      width: 400px;
+      height: 400px;
+      margin: auto;
+      padding: 10px;
+      margin-top: 50px;
+
+        }
+          input{
+      width: 400px;
+      height: 30px;
+  }
+   #btn{
+      margin-top: 40px;
+      background-color: rgb(128, 128, 226) ;
+  }
+  h1{
+      text-align: center;
+  }
+    </style>
+</head>
+<body>
+    <div id="main">
+       
+    <form >
+        <h1>Signin</h1>
+    <p>Email</p>
+    <input type="email" placeholder=" Enter Email" id="email">
+    <p>Password</p>
+    <input type="password" placeholder="Password" id="pass">
+    <input type="submit"  id="btn">
+    <h2>Already Don't have a account <a href="Ass1.html"> Signup</a></h2>
+</form>
+
+</div>
+</body>
+</html>
+<script>
+ var logindata=JSON.parse(localStorage.getItem("student"))
+
+ var form=document.querySelector("form")
+ form.addEventListener("submit", myfun)
+ function myfun(){
+     event.preventDefault()
+     data={
+        Email:form.email.value,
+        Pass:form.pass.value,
+     }
+    //  console.log(data)
+    if(logindata.Email== data.Email && logindata.Pass==data.Pass)
+    {
+        alert("Login sucessful")
+    }
+    else{
+        alert("Please Signup")
+    }
+ }
+    
+</script>

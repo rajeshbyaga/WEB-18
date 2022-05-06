@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+  #main{
+      border: 2px solid black;
+      width: 400px;
+      height: 550px;
+      margin: auto;
+      padding: 10px;
+      margin-top: 50px;
+  }
+  input{
+      width: 400px;
+      height: 30px;
+  }
+  h1{
+      text-align: center;
+  }
+  #btn{
+      margin-top: 40px;
+      background-color: rgb(128, 128, 226) ;
+  }
+    </style>
+</head>
+<body>
+    
+    <div id="main">
+         <h1>Sign Up</h1>
+    <form action="">
+        <p>Full name</p>
+        <input type="text" placeholder="Enter Full Name" id="name" required>
+        <p>Email</p>
+        <input type="email" placeholder=" Enter Email" id="email" required>
+        <p>Password</p>
+        <input type="password" placeholder="Password" id="pass" required>
+
+        <p>By signup up,I accept the Masai School <a href="https://masaischool.com/terms" >Terms of service</a> and acknowledge the <a href="https://masaischool.com/privacy" >Privacy Policy</a></p>
+        <input type="submit" id="btn">
+
+    </form>
+    <h2>Already have a account <a href="login.html">Login</a></h2>
+    </div>
+</body>
+</html>
+<script>
+     var form = document.querySelector("form");
+        form.addEventListener("submit", myfun)
+    var arr=[]
+        function myfun() {
+            event.preventDefault();
+
+            var data={
+                Name: form.name.value,
+                Email:form.email.value,
+                Pass:form.pass.value,
+
+            }
+         // console.log(data)
+     localStorage.setItem("student",JSON.stringify(data))
+        alert("Signup Sucessfully Completed")
+        window.location.href="login.html"
+        }
+</script>
